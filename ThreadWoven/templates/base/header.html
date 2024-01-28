@@ -25,14 +25,24 @@
                                     <li><a href="#">Germany</a></li>
                                 </ul>
                             </li>
-                            <li class="top_links"><a href="#"><i class="zmdi zmdi-account"></i> My account <i class="zmdi zmdi-caret-down"></i></a>
-                                <ul class="dropdown_links">
-                                    <li><a href="checkout.html">Checkout </a></li>
-                                    <li><a href="my-account.html">My Account </a></li>
-                                    <li><a href="cart.html">Shopping Cart</a></li>
-                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                </ul>
-                            </li>
+                            
+{% if user.is_authenticated %}
+<li class="top_links">
+    <a href=""><i class="zmdi zmdi-account"></i> My account <i class="zmdi zmdi-caret-down"></i></a>
+    <ul class="dropdown_links">
+        <li><a href="checkout.html">Checkout</a></li>
+        <li><a href="my-account.html">My Account</a></li>
+        <li><a href="cart.html">Shopping Cart</a></li>
+        <li><a href="wishlist.html">Wishlist</a></li>
+    </ul>
+</li>
+{% else %}
+
+<li class="top_links">
+    <a href="#"><i class="zmdi zmdi-account"></i>Login</i></a>
+</li>
+
+{% endif %}
 
                         </ul>
                     </div> 
